@@ -4,8 +4,8 @@ export function add(a: number, b: number): number {
   return a + b;
 }
 
-export function getArgs()  {
-  const {values: params} = parseArgs({
+export function getArgs() {
+  const { values: params } = parseArgs({
     args: process.argv.slice(2),
     options: {
       a: {
@@ -14,7 +14,7 @@ export function getArgs()  {
       b: {
         type: "string",
       },
-    }
+    },
   });
 
   return {
@@ -23,7 +23,7 @@ export function getArgs()  {
   };
 }
 
-function formatArg(value?: string):  number {
+function formatArg(value?: string): number {
   const a = parseFloat(value ?? "0");
 
   if (isNaN(a)) {

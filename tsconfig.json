@@ -10,7 +10,7 @@
     "module": "preserve",
     "target": "esnext",
     // "types": [],
-    
+
     // For nodejs:
     // "lib": ["esnext"],
     "types": ["bun"],
