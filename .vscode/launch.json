@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "bun",
+      "request": "launch",
+      "name": "Debug current file",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "args": ["--a", "1", "2"],
+      "stopOnEntry": false,
+      "watchMode": false
+    }
+  ]
+}
