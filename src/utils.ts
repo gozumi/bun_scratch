@@ -21,7 +21,6 @@ export function getArgs()  {
     a: formatArg(params.a),
     b: formatArg(params.b),
   };
-
 }
 
 function formatArg(value?: string):  number {
