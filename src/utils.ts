@@ -8,22 +8,25 @@ export function getArgs() {
   const { values: params } = parseArgs({
     args: process.argv.slice(2),
     options: {
-      a: {
-        type: "string",
-      },
-      b: {
-        type: "string",
-      },
+      mode: { short: "m", type: "string" },
+      a: { type: "string" },
+      b: { type: "string" },
     },
   });
 
-  return {
-    a: formatArg(params.a),
-    b: formatArg(params.b),
-  };
+  switch (params.mode) {
+    case "add":
+      return {
+        a: formatNumberArg(params.a),
+        b: formatNumberArg(params.b),
+      };
+    default:
+      console.error(`Invalid mode: ${params.mode}`);
+      throw new Error(`Invalid mode: ${params.mode}`);
+  }
 }
 
-function formatArg(value?: string): number {
+function formatNumberArg(value?: string): number {
   const a = parseFloat(value ?? "0");
 
   if (isNaN(a)) {
