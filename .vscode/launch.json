@@ -7,7 +7,7 @@
       "name": "Debug current file",
       "program": "${file}",
       "cwd": "${workspaceFolder}",
-      "args": ["--a", "1", "2"],
+      "args": ["--a", "1", "--b", "2"],
       "stopOnEntry": false,
       "watchMode": false
     }
