@@ -1,0 +1,16 @@
+{
+  "name": "scratch-01",
+  "version": "1.0.0",
+  "description": "Typescript scratch project",
+  "license": "ISC",
+  "author": "Ian Anderson",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}
