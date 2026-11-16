@@ -5,13 +5,21 @@ export function add(params: { a: number; b: number }): string {
   return `${params.a} + ${params.b} = ${result}`;
 }
 
-export function getArgs(): { mode: "add" | "debounce"; a: number; b: number } {
+export function getArgs(): {
+  mode: "add" | "debounce";
+  a?: number;
+  b?: number;
+  c?: number;
+  d?: number;
+} {
   const { values: params } = parseArgs({
     args: process.argv.slice(2),
     options: {
       mode: { short: "m", type: "string" },
       a: { type: "string" },
       b: { type: "string" },
+      c: { type: "string" },
+      d: { type: "string" },
     },
   });
 
@@ -25,8 +33,6 @@ export function getArgs(): { mode: "add" | "debounce"; a: number; b: number } {
     case "debounce":
       return {
         mode: params.mode,
-        a: formatNumberArg(params.a),
-        b: formatNumberArg(params.b),
       };
     default:
       console.error(`Invalid mode: ${params.mode}`);
@@ -36,6 +42,10 @@ export function getArgs(): { mode: "add" | "debounce"; a: number; b: number } {
 
 export function showResult(result: string) {
   console.log(result);
+}
+
+export function search(q: string) {
+  console.log(`Searching for: ${q}`);
 }
 
 function formatNumberArg(value?: string): number {

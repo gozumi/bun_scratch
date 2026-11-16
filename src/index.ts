@@ -1,4 +1,5 @@
-import { getArgs, add, showResult } from "./utils.ts";
+import { debounce } from "./debounce.ts";
+import { getArgs, add, showResult, search } from "./utils.ts";
 
 main();
 
@@ -7,10 +8,16 @@ function main() {
 
   switch (args.mode) {
     case "add":
-      showResult(add(args));
+      showResult(add({ a: args.a!, b: args.b! }));
       break;
     case "debounce":
-      console.log("Debounce mode is not implemented yet.");
+      const debouncedSearch = debounce(search, 300);
+      debouncedSearch("r");
+      debouncedSearch("re");
+      debouncedSearch("res");
+      debouncedSearch("rese");
+      debouncedSearch("resea");
+
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
