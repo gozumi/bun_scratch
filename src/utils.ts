@@ -1,10 +1,11 @@
 import { parseArgs } from "node:util";
 
-export function add(a: number, b: number): number {
-  return a + b;
+export function add(params: { a: number; b: number }): string {
+  const result = params.a + params.b;
+  return `${params.a} + ${params.b} = ${result}`;
 }
 
-export function getArgs() {
+export function getArgs(): { mode: "add" | "debounce"; a: number; b: number } {
   const { values: params } = parseArgs({
     args: process.argv.slice(2),
     options: {
@@ -17,6 +18,13 @@ export function getArgs() {
   switch (params.mode) {
     case "add":
       return {
+        mode: params.mode,
+        a: formatNumberArg(params.a),
+        b: formatNumberArg(params.b),
+      };
+    case "debounce":
+      return {
+        mode: params.mode,
         a: formatNumberArg(params.a),
         b: formatNumberArg(params.b),
       };
@@ -24,6 +32,10 @@ export function getArgs() {
       console.error(`Invalid mode: ${params.mode}`);
       throw new Error(`Invalid mode: ${params.mode}`);
   }
+}
+
+export function showResult(result: string) {
+  console.log(result);
 }
 
 function formatNumberArg(value?: string): number {
