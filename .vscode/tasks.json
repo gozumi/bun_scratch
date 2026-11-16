@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "bun fmt: current file",
+      "type": "shell",
+      "command": "bun fmt \"${file}\"",
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "bun fmt: workspace",
+      "type": "shell",
+      "command": "bun fmt",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
