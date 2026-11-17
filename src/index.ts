@@ -1,3 +1,4 @@
+import { classExamples } from './classes.ts';
 import { debounce, throttle } from './debounce-throttle.ts';
 import { prototypeExamples } from './prototype.ts';
 import { thisExamples } from './this.ts';
@@ -36,6 +37,9 @@ function main() {
       break;
     case 'prototype':
       prototypeExamples();
+      break;
+    case 'class':
+      classExamples();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
