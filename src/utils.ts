@@ -6,7 +6,7 @@ export function add(params: { a: number; b: number }): string {
 }
 
 export function getArgs(): {
-  mode: 'add' | 'debounce';
+  mode: 'add' | 'debounce' | 'throttle';
   a?: number;
   b?: number;
   c?: number;
@@ -34,6 +34,10 @@ export function getArgs(): {
       return {
         mode: params.mode,
       };
+    case 'throttle':
+      return {
+        mode: 'throttle'
+      }
     default:
       console.error(`Invalid mode: ${params.mode}`);
       throw new Error(`Invalid mode: ${params.mode}`);
