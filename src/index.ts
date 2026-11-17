@@ -1,4 +1,4 @@
-import { debounce } from './debounce.ts';
+import { debounce } from './debounce-throttle.ts';
 import { add, foo, getArgs, search, showResult } from './utils.ts';
 
 main();
