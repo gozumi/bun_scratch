@@ -11,6 +11,12 @@ export function classExamples() {
 
   console.log(`the temperature is ${temperature.celsius} celsius`);
   console.log(`the temperature is ${temperature.fahrenheit} fahrenheit`);
+
+  const c = new Counter();
+  console.log(`current count is: ${c.value}`);
+  c.increment();
+  console.log(`current count is: ${c.value}`);
+  console.log(`is there a counter in c: ${Counter.isCounter(c)}`);
 }
 
 class Base {
@@ -46,5 +52,20 @@ class Temperature {
 
   set fahrenheit(value: number) {
     this.celsius = ((value - 32) * 5) / 9; // reuses the celsius setter's validation
+  }
+}
+
+class Counter {
+  #count = 0;
+
+  increment() {
+    this.#count++;
+  }
+  get value() {
+    return this.#count;
+  }
+
+  static isCounter(obj: Counter) {
+    return #count in obj; // brand check — the only way to test from outside
   }
 }
