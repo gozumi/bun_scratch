@@ -1,0 +1,5 @@
+[lint.rules]
+"@typescript-eslint/no-explicit-any" = "error"
+
+[fmt]
+singleQuote = true

@@ -1,22 +1,22 @@
-import { debounce } from "./debounce.ts";
-import { getArgs, add, showResult, search } from "./utils.ts";
+import { debounce } from './debounce.ts';
+import { getArgs, add, showResult, search } from './utils.ts';
 
 main();
 
 function main() {
   const args = getArgs();
+  const debouncedSearch = debounce(search, 300);
 
   switch (args.mode) {
-    case "add":
+    case 'add':
       showResult(add({ a: args.a!, b: args.b! }));
       break;
-    case "debounce":
-      const debouncedSearch = debounce(search, 300);
-      debouncedSearch("r");
-      debouncedSearch("re");
-      debouncedSearch("res");
-      debouncedSearch("rese");
-      debouncedSearch("resea");
+    case 'debounce':
+      debouncedSearch('r');
+      debouncedSearch('re');
+      debouncedSearch('res');
+      debouncedSearch('rese');
+      debouncedSearch('resea');
 
       break;
     default:

@@ -1,4 +1,4 @@
-import { parseArgs } from "node:util";
+import { parseArgs } from 'node:util';
 
 export function add(params: { a: number; b: number }): string {
   const result = params.a + params.b;
@@ -6,7 +6,7 @@ export function add(params: { a: number; b: number }): string {
 }
 
 export function getArgs(): {
-  mode: "add" | "debounce";
+  mode: 'add' | 'debounce';
   a?: number;
   b?: number;
   c?: number;
@@ -15,22 +15,22 @@ export function getArgs(): {
   const { values: params } = parseArgs({
     args: process.argv.slice(2),
     options: {
-      mode: { short: "m", type: "string" },
-      a: { type: "string" },
-      b: { type: "string" },
-      c: { type: "string" },
-      d: { type: "string" },
+      mode: { short: 'm', type: 'string' },
+      a: { type: 'string' },
+      b: { type: 'string' },
+      c: { type: 'string' },
+      d: { type: 'string' },
     },
   });
 
   switch (params.mode) {
-    case "add":
+    case 'add':
       return {
         mode: params.mode,
         a: formatNumberArg(params.a),
         b: formatNumberArg(params.b),
       };
-    case "debounce":
+    case 'debounce':
       return {
         mode: params.mode,
       };
@@ -49,7 +49,7 @@ export function search(q: string) {
 }
 
 function formatNumberArg(value?: string): number {
-  const a = parseFloat(value ?? "0");
+  const a = parseFloat(value ?? '0');
 
   if (isNaN(a)) {
     console.error(`Invalid value for argument: ${value}`);

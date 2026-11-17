@@ -19,6 +19,31 @@
         "reveal": "silent"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "bun lint",
+      "type": "shell",
+      "command": "bun lint --format=unix",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": {
+        "owner": "bun-lint",
+        "fileLocation": "absolute",
+        "pattern": {
+          "regexp": "^(.+?):(\\d+):(\\d+): (.*) \\[(Error|Warning)/(.+)\\]$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4,
+          "severity": 5,
+          "code": 6
+        }
+      }
     }
   ]
 }
