@@ -5,7 +5,7 @@ main();
 
 function main() {
   const args = getArgs();
-  const debouncedSearch = debounce(search, 300);
+  const debouncedSearch = debounce(search, 50);
   const debouncedFoo = debounce(foo, 300);
   const throttleFoo = throttle(foo, 10);
 
@@ -14,12 +14,14 @@ function main() {
       showResult(add({ a: args.a!, b: args.b! }));
       break;
     case 'debounce':
-      debouncedSearch('r');
-      debouncedSearch('re');
-      debouncedSearch('res');
-      debouncedSearch('rese');
-      debouncedSearch('resea');
-      debouncedFoo('two', 2);
+      for (let i = 0; i < 100; i++) {
+        const group = Math.floor(i / 2);
+        setTimeout(() => debouncedSearch(`${i}`), group * 200 + i);
+      }
+
+      for (let i = 0; i < 100; i++) {
+        debouncedFoo('foo', i);
+      }
 
       break;
     case 'throttle':
