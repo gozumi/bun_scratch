@@ -1,4 +1,5 @@
 import { debounce, throttle } from './debounce-throttle.ts';
+import { thisExamples } from './this.ts';
 import { add, foo, getArgs, search, showResult } from './utils.ts';
 
 main();
@@ -28,6 +29,10 @@ function main() {
       for (let i = 0; i < 1000000; i++) {
         throttleFoo(`${i}`, i);
       }
+
+      break;
+    case 'this':
+      thisExamples();
 
       break;
     default:
