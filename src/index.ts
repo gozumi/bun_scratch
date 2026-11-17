@@ -1,11 +1,12 @@
 import { debounce } from './debounce.ts';
-import { getArgs, add, showResult, search } from './utils.ts';
+import { add, foo, getArgs, search, showResult } from './utils.ts';
 
 main();
 
 function main() {
   const args = getArgs();
   const debouncedSearch = debounce(search, 300);
+  const debouncedFoo = debounce(foo, 300);
 
   switch (args.mode) {
     case 'add':
@@ -17,6 +18,7 @@ function main() {
       debouncedSearch('res');
       debouncedSearch('rese');
       debouncedSearch('resea');
+      debouncedFoo('two', 2);
 
       break;
     default:

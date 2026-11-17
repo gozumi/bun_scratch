@@ -48,6 +48,11 @@ export function search(q: string) {
   console.log(`Searching for: ${q}`);
 }
 
+export function foo(bar: string, baz: number) {
+  const value = `${bar}-${baz}`;
+  console.log(`foo: ${value}`);
+}
+
 function formatNumberArg(value?: string): number {
   const a = parseFloat(value ?? '0');
 
