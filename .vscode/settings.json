@@ -2,5 +2,8 @@
   "npm.packageManager": "bun",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
-  }
+  },
+  "cSpell.words": [
+    "colour"
+  ]
 }

@@ -1,4 +1,5 @@
 import { debounce, throttle } from './debounce-throttle.ts';
+import { prototypeExamples } from './prototype.ts';
 import { thisExamples } from './this.ts';
 import { add, foo, getArgs, search, showResult } from './utils.ts';
 
@@ -29,11 +30,12 @@ function main() {
       for (let i = 0; i < 1000000; i++) {
         throttleFoo(`${i}`, i);
       }
-
       break;
     case 'this':
       thisExamples();
-
+      break;
+    case 'prototype':
+      prototypeExamples();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
