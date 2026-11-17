@@ -1,5 +1,7 @@
 [lint.rules]
 "@typescript-eslint/no-explicit-any" = "error"
+"prefer-object-has-own" = "error"
+"no-prototype-builtins" = "error"
 
 [fmt]
 singleQuote = true
