@@ -3,6 +3,7 @@ import { classExamples } from './classes.ts';
 import { comparison } from './comparison.ts';
 import { copying } from './copying.ts';
 import { debounce, throttle } from './debounce-throttle.ts';
+import { objectExamples } from './objects.ts';
 import { prototypeExamples } from './prototype.ts';
 import { thisExamples } from './this.ts';
 import { add, foo, getArgs, search, showResult } from './utils.ts';
@@ -52,6 +53,9 @@ function main() {
       break;
     case 'array':
       arrayExamples();
+      break;
+    case 'objects':
+      objectExamples();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
