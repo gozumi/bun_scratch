@@ -1,4 +1,5 @@
 import { classExamples } from './classes.ts';
+import { comparison } from './comparison.ts';
 import { debounce, throttle } from './debounce-throttle.ts';
 import { prototypeExamples } from './prototype.ts';
 import { thisExamples } from './this.ts';
@@ -40,6 +41,9 @@ function main() {
       break;
     case 'class':
       classExamples();
+      break;
+    case 'comparison':
+      comparison();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
