@@ -1,3 +1,4 @@
+import { arrayExamples } from './array.ts';
 import { classExamples } from './classes.ts';
 import { comparison } from './comparison.ts';
 import { copying } from './copying.ts';
@@ -48,6 +49,9 @@ function main() {
       break;
     case 'copying':
       copying();
+      break;
+    case 'array':
+      arrayExamples();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);

@@ -14,7 +14,8 @@ export function getArgs(): {
     | 'prototype'
     | 'class'
     | 'comparison'
-    | 'copying';
+    | 'copying'
+    | 'array';
   a?: number;
   b?: number;
   c?: number;
@@ -65,6 +66,10 @@ export function getArgs(): {
     case 'copying':
       return {
         mode: 'copying',
+      };
+    case 'array':
+      return {
+        mode: 'array',
       };
     default:
       console.error(`Invalid mode: ${params.mode}`);
