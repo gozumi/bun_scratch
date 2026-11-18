@@ -17,7 +17,15 @@ export function arrayExamples() {
   const arr3 = [0, 2, [1, [3, [4, 5, [6, 7, 8, 9]]]]];
 
   const result = arr3.flatMap((el) => (el === 2 ? [2, 2] : el));
+  console.log('arr3');
+  console.dir(arr3, { depth: Infinity });
+  console.log('=====>');
 
   console.log('arr3.flatMap((el) => (el === 2 ? [2, 2] : el))');
   console.dir(result, { depth: null });
+  console.log('=====>');
+
+  const arrWith = arr3.with(1, 99999);
+  console.log('arr3.with(1, 99999)');
+  console.dir(arr3.with(1, 99999), { depth: Infinity });
 }
