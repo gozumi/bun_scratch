@@ -6,7 +6,15 @@ export function add(params: { a: number; b: number }): string {
 }
 
 export function getArgs(): {
-  mode: 'add' | 'debounce' | 'throttle' | 'this' | 'prototype'|'class' | 'comparison';
+  mode:
+    | 'add'
+    | 'debounce'
+    | 'throttle'
+    | 'this'
+    | 'prototype'
+    | 'class'
+    | 'comparison'
+    | 'copying';
   a?: number;
   b?: number;
   c?: number;
@@ -48,12 +56,16 @@ export function getArgs(): {
       };
     case 'class':
       return {
-        mode: 'class'
-      }
+        mode: 'class',
+      };
     case 'comparison':
       return {
-        mode: 'comparison'
-      }
+        mode: 'comparison',
+      };
+    case 'copying':
+      return {
+        mode: 'copying',
+      };
     default:
       console.error(`Invalid mode: ${params.mode}`);
       throw new Error(`Invalid mode: ${params.mode}`);

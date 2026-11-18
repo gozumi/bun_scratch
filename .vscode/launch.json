@@ -4,12 +4,36 @@
     {
       "type": "bun",
       "request": "launch",
-      "name": "Debug current file",
-      "program": "${file}",
+      "name": "Debug mode…",
+      "program": "${workspaceFolder}/src/index.ts",
       "cwd": "${workspaceFolder}",
-      "args": ["--a", "1", "--b", "2"],
+      "args": [
+        "--mode",
+        "${input:mode}",
+        "--a",
+        "1",
+        "--b",
+        "2"
+      ],
       "stopOnEntry": false,
       "watchMode": false
+    }
+  ],
+  "inputs": [
+    {
+      "id": "mode",
+      "type": "pickString",
+      "description": "Which example to run",
+      "options": [
+        "add",
+        "debounce",
+        "throttle",
+        "this",
+        "prototype",
+        "class",
+        "comparison",
+        "copying"
+      ]
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { classExamples } from './classes.ts';
 import { comparison } from './comparison.ts';
+import { copying } from './copying.ts';
 import { debounce, throttle } from './debounce-throttle.ts';
 import { prototypeExamples } from './prototype.ts';
 import { thisExamples } from './this.ts';
@@ -44,6 +45,9 @@ function main() {
       break;
     case 'comparison':
       comparison();
+      break;
+    case 'copying':
+      copying();
       break;
     default:
       console.error(`Invalid mode: ${args.mode}`);
